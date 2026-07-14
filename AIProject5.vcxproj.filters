@@ -45,6 +45,9 @@
     <ClInclude Include="Update\Update.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Delete\Delete.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="JsonValue.cpp">
@@ -74,6 +77,9 @@
     <ClCompile Include="Update\Update.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Delete\Delete.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
     <ClCompile Include="tests\JsonValueTest.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -96,6 +102,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="tests\Update\UpdateTest.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="tests\Delete\DeleteTest.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="tests\TestMain.cpp">
