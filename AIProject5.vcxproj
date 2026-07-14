@@ -155,6 +155,7 @@
     <ClInclude Include="Create\Create.h" />
     <ClInclude Include="Read\Read.h" />
     <ClInclude Include="Update\Update.h" />
+    <ClInclude Include="Delete\Delete.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="JsonValue.cpp" />
@@ -168,6 +169,8 @@
     <ClCompile Include="tests\Read\ReadTest.cpp" />
     <ClCompile Include="Update\Update.cpp" />
     <ClCompile Include="tests\Update\UpdateTest.cpp" />
+    <ClCompile Include="Delete\Delete.cpp" />
+    <ClCompile Include="tests\Delete\DeleteTest.cpp" />
     <ClCompile Include="JsonStore.cpp" />
     <ClCompile Include="JsonStoreDemo.cpp" />
     <ClCompile Include="tests\JsonValueTest.cpp" />
