@@ -33,14 +33,14 @@
   기능 쪽 책임).
 
 ## 테스트 케이스 목록
-- [ ] 정상 케이스: Record를 만들어 `toJson`으로 변환 시 각 필드가
+- [x] 정상 케이스: Record를 만들어 `toJson`으로 변환 시 각 필드가
       올바른 key/value로 들어감
-- [ ] 정상 케이스: `toJson`으로 만든 JsonValue를 `fromJson`으로
+- [x] 정상 케이스: `toJson`으로 만든 JsonValue를 `fromJson`으로
       되돌리면 원래 Record와 동일 (round-trip)
-- [ ] 예외 케이스: object가 아닌 JsonValue를 `fromJson`에 넣으면
+- [x] 예외 케이스: object가 아닌 JsonValue를 `fromJson`에 넣으면
       예외 발생
-- [ ] 예외 케이스: 필드가 누락된 object를 `fromJson`에 넣으면
+- [x] 예외 케이스: 필드가 누락된 object를 `fromJson`에 넣으면
       예외 발생
-- [ ] 정상 케이스: `writeAllRecords`로 저장 후 `readAllRecords`로
+- [x] 정상 케이스: `writeAllRecords`로 저장 후 `readAllRecords`로
       다시 읽으면 동일한 목록 (round-trip)
-- [ ] 엣지 케이스: 파일이 없을 때 `readAllRecords`는 빈 벡터 반환
+- [x] 엣지 케이스: 파일이 없을 때 `readAllRecords`는 빈 벡터 반환

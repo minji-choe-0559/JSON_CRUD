@@ -4,6 +4,7 @@
 
 #include "../../Create/Create.h"
 #include "../../JsonStore.h"
+#include "../../Read/Read.h"
 
 namespace {
 
@@ -58,4 +59,12 @@ TEST_F(CreateTest, NextIdIsMaxExistingIdPlusOne) {
 
     Record third = createRecord(path, "Kim", "010-5555-6666");
     EXPECT_EQ(3, third.id);
+}
+
+TEST_F(CreateTest, SpecialCharactersSurviveFileRoundTrip) {
+    Record created = createRecord(path, "김\"민지\"\\박", "010-1234-5678");
+
+    std::optional<Record> reloaded = findById(path, created.id);
+    ASSERT_TRUE(reloaded.has_value());
+    EXPECT_EQ("김\"민지\"\\박", reloaded->name);
 }

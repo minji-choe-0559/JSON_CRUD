@@ -78,3 +78,17 @@ TEST_F(UpdateTest, ReturnsNulloptWhenIdMissing) {
     std::optional<Record> result = updateRecord(path, 999, "X", std::nullopt);
     EXPECT_FALSE(result.has_value());
 }
+
+TEST_F(UpdateTest, NoFieldsProvidedKeepsRecordUnchanged) {
+    Record record = createRecord(path, "Mia", "010-1111-2222");
+
+    std::optional<Record> result = updateRecord(path, record.id, std::nullopt, std::nullopt);
+    ASSERT_TRUE(result.has_value());
+    EXPECT_EQ("Mia", result->name);
+    EXPECT_EQ("010-1111-2222", result->phone);
+
+    std::optional<Record> reloaded = findById(path, record.id);
+    ASSERT_TRUE(reloaded.has_value());
+    EXPECT_EQ("Mia", reloaded->name);
+    EXPECT_EQ("010-1111-2222", reloaded->phone);
+}
