@@ -152,6 +152,7 @@
     <ClInclude Include="JsonStore.h" />
     <ClInclude Include="JsonStoreDemo.h" />
     <ClInclude Include="Record.h" />
+    <ClInclude Include="Create\Create.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="JsonValue.cpp" />
@@ -159,6 +160,8 @@
     <ClCompile Include="JsonWriter.cpp" />
     <ClCompile Include="Record.cpp" />
     <ClCompile Include="tests\RecordTest.cpp" />
+    <ClCompile Include="Create\Create.cpp" />
+    <ClCompile Include="tests\Create\CreateTest.cpp" />
     <ClCompile Include="JsonStore.cpp" />
     <ClCompile Include="JsonStoreDemo.cpp" />
     <ClCompile Include="tests\JsonValueTest.cpp" />
