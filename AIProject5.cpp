@@ -114,18 +114,28 @@ void runConsoleMenu() {
         printMenu();
         int choice;
         if (!(std::cin >> choice)) {
-            break;
+            if (std::cin.eof()) {
+                return;
+            }
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "잘못된 입력입니다. 숫자를 입력해주세요.\n";
+            continue;
         }
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
-        switch (choice) {
-            case 1: handleCreate(); break;
-            case 2: handleReadAll(); break;
-            case 3: handleFindById(); break;
-            case 4: handleUpdate(); break;
-            case 5: handleDelete(); break;
-            case 6: return;
-            default: std::cout << "잘못된 선택입니다.\n"; break;
+        try {
+            switch (choice) {
+                case 1: handleCreate(); break;
+                case 2: handleReadAll(); break;
+                case 3: handleFindById(); break;
+                case 4: handleUpdate(); break;
+                case 5: handleDelete(); break;
+                case 6: return;
+                default: std::cout << "잘못된 선택입니다.\n"; break;
+            }
+        } catch (const std::exception& e) {
+            std::cout << "오류가 발생했습니다: " << e.what() << "\n";
         }
     }
 }
