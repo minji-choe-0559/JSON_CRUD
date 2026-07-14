@@ -39,6 +39,9 @@
     <ClInclude Include="Create\Create.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Read\Read.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="JsonValue.cpp">
@@ -62,6 +65,9 @@
     <ClCompile Include="Create\Create.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Read\Read.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
     <ClCompile Include="tests\JsonValueTest.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -78,6 +84,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="tests\Create\CreateTest.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="tests\Read\ReadTest.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="tests\TestMain.cpp">
