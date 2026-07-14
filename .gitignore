@@ -16,3 +16,6 @@ packages/
 
 # 런타임 데이터 파일
 data.json
+
+# 임시 작업 문서 (리포에 남기지 않는 개인 참고용)
+docs_temp/
