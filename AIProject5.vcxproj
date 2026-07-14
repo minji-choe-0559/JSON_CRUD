@@ -144,12 +144,15 @@
   <ItemGroup>
     <ClInclude Include="JsonValue.h" />
     <ClInclude Include="JsonParser.h" />
+    <ClInclude Include="JsonWriter.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="JsonValue.cpp" />
     <ClCompile Include="JsonParser.cpp" />
+    <ClCompile Include="JsonWriter.cpp" />
     <ClCompile Include="tests\JsonValueTest.cpp" />
     <ClCompile Include="tests\JsonParserTest.cpp" />
+    <ClCompile Include="tests\JsonWriterTest.cpp" />
     <ClCompile Include="tests\TestMain.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
