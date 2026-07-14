@@ -141,6 +141,14 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="JsonValue.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="JsonValue.cpp" />
+    <ClCompile Include="tests\JsonValueTest.cpp" />
+    <ClCompile Include="tests\TestMain.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="packages\gmock.1.11.0\build\native\gmock.targets" Condition="Exists('packages\gmock.1.11.0\build\native\gmock.targets')" />
