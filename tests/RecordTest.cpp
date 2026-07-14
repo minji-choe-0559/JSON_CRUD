@@ -1,5 +1,7 @@
 #include <gtest/gtest.h>
 
+#include <filesystem>
+
 #include "../Record.h"
 
 TEST(Record, ToJsonProducesExpectedFields) {
@@ -28,4 +30,41 @@ TEST(Record, FromJsonThrowsWhenNotObject) {
 TEST(Record, FromJsonThrowsWhenFieldMissing) {
     std::map<std::string, JsonValue> fields{ { "id", JsonValue(1) }, { "name", JsonValue("Mia") } };
     EXPECT_THROW(fromJson(JsonValue(fields)), std::runtime_error);
+}
+
+namespace {
+
+class RecordRepositoryTest : public ::testing::Test {
+protected:
+    void SetUp() override {
+        path = (std::filesystem::temp_directory_path() / "aiproject5_record_repo_test.json").string();
+        std::filesystem::remove(path);
+    }
+
+    void TearDown() override {
+        std::filesystem::remove(path);
+    }
+
+    std::string path;
+};
+
+}  // namespace
+
+TEST_F(RecordRepositoryTest, ReadAllRecordsReturnsEmptyForMissingFile) {
+    std::vector<Record> records = readAllRecords(path);
+    EXPECT_TRUE(records.empty());
+}
+
+TEST_F(RecordRepositoryTest, WriteThenReadRoundTrips) {
+    std::vector<Record> records{
+        Record{ 1, "Mia", "010-1111-2222" },
+        Record{ 2, "Choe", "010-3333-4444" },
+    };
+
+    writeAllRecords(path, records);
+    std::vector<Record> reloaded = readAllRecords(path);
+
+    ASSERT_EQ(2u, reloaded.size());
+    EXPECT_EQ("Mia", reloaded[0].name);
+    EXPECT_EQ("Choe", reloaded[1].name);
 }
