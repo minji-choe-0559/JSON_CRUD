@@ -150,7 +150,6 @@
     <ClInclude Include="JsonParser.h" />
     <ClInclude Include="JsonWriter.h" />
     <ClInclude Include="JsonStore.h" />
-    <ClInclude Include="JsonStoreDemo.h" />
     <ClInclude Include="Record.h" />
     <ClInclude Include="Create\Create.h" />
     <ClInclude Include="Read\Read.h" />
@@ -158,6 +157,7 @@
     <ClInclude Include="Delete\Delete.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AIProject5.cpp" />
     <ClCompile Include="JsonValue.cpp" />
     <ClCompile Include="JsonParser.cpp" />
     <ClCompile Include="JsonWriter.cpp" />
@@ -173,12 +173,10 @@
     <ClCompile Include="tests\Delete\DeleteTest.cpp" />
     <ClCompile Include="tests\Integration\CrudIntegrationTest.cpp" />
     <ClCompile Include="JsonStore.cpp" />
-    <ClCompile Include="JsonStoreDemo.cpp" />
     <ClCompile Include="tests\JsonValueTest.cpp" />
     <ClCompile Include="tests\JsonParserTest.cpp" />
     <ClCompile Include="tests\JsonWriterTest.cpp" />
     <ClCompile Include="tests\JsonStoreTest.cpp" />
-    <ClCompile Include="tests\TestMain.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
