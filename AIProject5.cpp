@@ -133,7 +133,12 @@ void runConsoleMenu() {
 }  // namespace
 
 int main(int argc, char** argv) {
-    if (argc > 1 && std::string(argv[1]) == "--test") {
+    // 인자가 하나라도 있으면 테스트 모드로 취급한다. Visual Studio의
+    // GoogleTest 어댑터(Test Explorer)는 --test가 아니라
+    // --gtest_list_tests 같은 자체 플래그로 실행 파일을 호출하므로,
+    // 특정 플래그 이름 대신 "인자 존재 여부"로 분기해야 어댑터와도
+    // 정상 동작한다.
+    if (argc > 1) {
         ::testing::InitGoogleTest(&argc, argv);
         return RUN_ALL_TESTS();
     }
