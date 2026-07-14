@@ -1,14 +1,7 @@
 #include "Read.h"
 
-#include "../JsonStore.h"
-
 std::vector<Record> readAll(const std::string& path) {
-    JsonValue data = JsonStore::read(path);
-    std::vector<Record> records;
-    for (const auto& item : data.asArray()) {
-        records.push_back(fromJson(item));
-    }
-    return records;
+    return readAllRecords(path);
 }
 
 std::optional<Record> findById(const std::string& path, int id) {
