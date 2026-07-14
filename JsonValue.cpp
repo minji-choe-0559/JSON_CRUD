@@ -6,7 +6,11 @@ JsonValue::JsonValue() : m_value(std::monostate{}) {}
 
 JsonValue::JsonValue(bool value) : m_value(value) {}
 
+JsonValue::JsonValue(int value) : m_value(static_cast<double>(value)) {}
+
 JsonValue::JsonValue(double value) : m_value(value) {}
+
+JsonValue::JsonValue(const char* value) : m_value(std::string(value)) {}
 
 JsonValue::JsonValue(std::string value) : m_value(std::move(value)) {}
 

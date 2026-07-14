@@ -19,6 +19,18 @@ TEST(JsonValue, NumberTypeAndValue) {
     EXPECT_DOUBLE_EQ(3.14, value.asNumber());
 }
 
+TEST(JsonValue, IntLiteralBecomesNumber) {
+    JsonValue value(5);
+    EXPECT_TRUE(value.isNumber());
+    EXPECT_DOUBLE_EQ(5.0, value.asNumber());
+}
+
+TEST(JsonValue, StringLiteralBecomesString) {
+    JsonValue value("Mia");
+    EXPECT_TRUE(value.isString());
+    EXPECT_EQ("Mia", value.asString());
+}
+
 TEST(JsonValue, StringTypeAndValue) {
     JsonValue value(std::string("hello"));
     EXPECT_TRUE(value.isString());

@@ -8,11 +8,13 @@
 class JsonValue {
 public:
     JsonValue();
-    JsonValue(bool value);
-    JsonValue(double value);
-    JsonValue(std::string value);
-    JsonValue(std::vector<JsonValue> value);
-    JsonValue(std::map<std::string, JsonValue> value);
+    explicit JsonValue(bool value);
+    explicit JsonValue(int value);
+    explicit JsonValue(double value);
+    explicit JsonValue(const char* value);
+    explicit JsonValue(std::string value);
+    explicit JsonValue(std::vector<JsonValue> value);
+    explicit JsonValue(std::map<std::string, JsonValue> value);
 
     bool isNull() const;
     bool isBool() const;
